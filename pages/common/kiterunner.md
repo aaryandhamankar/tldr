@@ -1,20 +1,29 @@
 # kiterunner
 
-> A contextual web scanner for discovering API paths and web endpoints using wordlists and kitebuilder schemas.
-> More information: <https://github.com/assetnote/kiterunner#usage>.
+> A tool for discovering API endpoints and performing brute-force API attacks.
+> Some subcommands such as `scan` and `brute` have their own usage documentation.
+> More information: <https://github.com/assetnote/kiterunner>.
 
-- View documentation for bruteforcing API paths and web endpoints:
+- Perform a brute-force attack using a specified wordlist:
 
-`tldr kiterunner brute`
+`kr brute {{url}} -w {{path/to/wordlist}}`
 
-- View documentation for concurrently scanning hosts with kitebuilder wordlists:
+- Scan an API using a kite file:
 
-`tldr kiterunner scan`
+`kr scan {{url}} -A {{path/to/file.kite}}`
 
-- View documentation for manipulating kitebuilder schemas:
+- Preform an actively scanning attack:
 
-`tldr kiterunner kb`
+`kr scan {{url}} -w {{path/to/wordlist}}`
 
-- View documentation for managing cached and remote wordlists:
+- Convert a normal payload to a kite file for faster performance:
 
-`tldr kiterunner wordlist`
+`kr kb compile {{path/to/payload_file}} --out-file {{path/to/output_file.kite}}`
+
+- Get comprehensive information about Kitebuilder's supported types and schema:
+
+`kr kb info`
+
+- Display help for a subcommand:
+
+`kr {{brute|scan|kb}} --help`
