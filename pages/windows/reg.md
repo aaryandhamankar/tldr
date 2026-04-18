@@ -1,37 +1,37 @@
 # reg
 
-> Manage keys and their values in the Windows registry.
-> Some subcommands such as `add` have their own usage documentation.
+> Manage the Windows Registry.
+> Some subcommands such as `add`, `delete`, `query`, `export` and `import` have their own usage documentation.
 > More information: <https://learn.microsoft.com/windows-server/administration/windows-commands/reg>.
 
-- Execute a registry command:
+- Add a new registry key or value:
 
-`reg {{command}}`
+`reg add {{key_name}}`
 
-- View documentation for adding and copying subkeys:
+- Delete a registry key or value:
 
-`tldr reg {{add|copy}}`
+`reg delete {{key_name}}`
 
-- View documentation for deleting keys and subkeys:
+- Query the registry for specific keys or values:
 
-`tldr reg {{delete|unload}}`
+`reg query {{key_name}}`
 
-- View documentation for searching, viewing, and comparing keys:
+- Export a part of the registry to a file:
 
-`tldr reg {{compare|query}}`
+`reg export {{key_name}} {{path\to\file.reg}}`
 
-- View documentation for exporting and importing registry keys not preserving the key ownerships and ACLs:
+- Import a registry file into the system:
 
-`tldr reg {{export|import}}`
+`reg import {{path\to\file.reg}}`
 
-- View documentation for saving, restoring registry and unloading keys preserving the key ownerships, and ACLs:
+- Copy a registry key to another location:
 
-`tldr reg {{save|restore|load|unload}}`
+`reg copy {{source_key}} {{destination_key}}`
 
-- Display help:
+- Save a registry key and its subkeys to a hive file:
 
-`reg /?`
+`reg save {{key_name}} {{path\to\file.hiv}}`
 
-- Display help for a specific command:
+- Display detailed help for a specific subcommand:
 
-`reg {{command}} /?`
+`reg {{subcommand}} /?`
