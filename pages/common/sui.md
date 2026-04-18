@@ -1,24 +1,33 @@
 # sui
 
-> Interact with the Sui network.
-> More information: <https://docs.sui.io/references/cli/cheatsheet>.
+> The Sui node runner and platform CLI.
+> Some subcommands such as `client`, `console`, `move`, `keytool`, `validator`, and `genesis` have their own usage documentation.
+> More information: <https://docs.sui.io/references/cli>.
 
-- Execute a Sui subcommand:
+- Connect to a Sui network using the default or existing configuration:
 
-`sui {{subcommand}}`
+`sui client`
 
-- Build tools for a smart contract:
+- Open an interactive console for the Sui client:
 
-`sui move {{subcommand}}`
+`sui console`
 
-- Publish smart contracts, get object information, execute transactions and more:
+- Manage Move projects and source code:
 
-`sui client {{subcommand}}`
+`sui move {{build|test|new|...}}`
 
-- Start a local network:
+- Manage cryptographic keys and addresses:
 
-`sui start`
+`sui keytool {{generate|import|...}}`
 
-- Update from source:
+- Manage a Sui validator node:
 
-`cargo install --locked --git https://github.com/MystenLabs/sui.git --branch testnet sui`
+`sui validator {{make-validator-info|...}}`
+
+- Manage and generate the genesis state for a Sui network:
+
+`sui genesis {{...}}`
+
+- Display help for a specific subcommand:
+
+`sui {{subcommand}} --help`
